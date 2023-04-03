@@ -1,0 +1,21 @@
+.menu {
+  display: flex;
+  padding: 23px 2% 0 0;
+  .menu-item {
+    padding: 10px 20px;
+    height: min-content;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #3f3d56;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.5s;
+    &:hover {
+        opacity: 1;
+        transition-timing-function: ease;
+    }
+  }
+}

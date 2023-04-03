@@ -1,0 +1,494 @@
+.header {
+  background: linear-gradient(
+      180deg,
+      rgba(219, 177, 225, 0.4) 0%,
+      rgba(255, 217, 79, 0.4) 100%
+    ),
+    linear-gradient(18.11deg, rgba(252, 176, 23, 0.4) 20.3%, #ffd94f 127.76%);
+  height: 775px;
+  .bg-icon {
+    position: absolute;
+    top: 90px;
+    left: 80px;
+    width: 400px;
+  }
+  .bg-2 {
+    left: 40%;
+  }
+  .title {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 59px;
+    letter-spacing: 0.03em;
+    background: linear-gradient(180deg, #fb8700 53.65%, #3f3d56 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 0 0 0 8%;
+  }
+  .header-one {
+    display: flex;
+    justify-content: space-between;
+    .mua-h-v6 {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 56px;
+    }
+    .chng-ti-vi {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 25px;
+      color: #000000;
+      margin-top: 30px;
+    }
+    .description-short {
+      z-index: 999;
+      width: 40%;
+      padding: 93px 0 0 8%;
+      .dowload-icon {
+        margin-top: 50px;
+        width: 120px;
+        background: black;
+        padding: 14px;
+        border-radius: 14px;
+        margin-right: 50px;
+      }
+      .ios {
+        padding: 12px;
+      }
+    }
+    .onboarding-icon {
+      padding: 40px 2% 0 0;
+    }
+  }
+}
+.more {
+  height: 68px;
+  width: 219px;
+  background: linear-gradient(180deg, #f09e3e 15.62%, #ffff00 100%);
+  border-radius: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 60px;
+  color: #3f3d56;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 90px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background: linear-gradient(180deg, #ffff00 15.62%, #f09e3e 100%);
+  }
+}
+.content {
+  .content-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    margin-top: 230px;
+    .about-common {
+      margin-top: 145px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10%;
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        .icon {
+          width: 200px;
+          height: 100px;
+        }
+        .title {
+          font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 44px;
+          color: #000000;
+          margin-top: 20px;
+        }
+        .descrip {
+          font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          color: #000000;
+          margin-top: 20px;
+        }
+      }
+    }
+    .text-1 {
+      color: #462e6a;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 56px;
+    }
+    .br-1 {
+      height: 2px;
+      width: 232px;
+      background: #000000;
+      border-radius: 5px;
+    }
+    .text-2 {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 19px;
+      line-height: 27px;
+      color: #7d7987;
+      padding: 0 10%;
+    }
+  }
+  .content-2 {
+    position: relative;
+    margin-top: 113px;
+    padding: 113px 15% 0 15%;
+    grid-gap: 34px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .block {
+      display: flex;
+      justify-content: center;
+    }
+    .Service-icon {
+      position: absolute;
+      opacity: 0.5;
+    }
+    .block-country {
+      z-index: 9999;
+      width: 250px;
+      height: 300px;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 217, 79, 0.6) 0%,
+        rgba(251, 135, 0, 0.6) 100%
+      );
+      box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+      padding: 0 20px;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+      .text-3 {
+        color: #000000;
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 35px;
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+  }
+}
+.body {
+  .more {
+    color: #ffffff;
+  }
+}
+.content-3 {
+  display: flex;
+  padding: 150px 5% 0 5%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  .more {
+    color: #ffffff;
+    .arrow-icon {
+      margin-left: 10px;
+    }
+  }
+  .dowload {
+    margin-left: 0px;
+    transform: translateX(0px);
+  }
+  .content4-icon {
+    width: 60%;
+  }
+  .descrip {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    color: #7d7987;
+  }
+  h3 {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 56px;
+    color: #462e6a;
+  }
+  .news {
+    padding: 10px;
+    .block-new {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .new-icon {
+      width: 200px;
+      height: 120px;
+      object-fit: cover;
+    }
+    .info {
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .title {
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 29px;
+        color: #000000;
+        word-wrap: break-word;
+      }
+      .date {
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 56px;
+        color: #7d7987;
+      }
+    }
+  }
+}
+.br {
+  background: #000000;
+  border-radius: 10px;
+  width: 56px;
+  height: 1.01px;
+  margin: 0 0 20px 0;
+}
+.content-5 {
+  padding-top: 0px;
+  .content5-icon {
+    width: 500px;
+  }
+}
+.content-6 {
+  margin-top: 200px;
+  background: linear-gradient(259.17deg, #f09e3e 53.96%, #ffd94f 77.96%);
+  opacity: 0.8;
+  border-radius: 24px;
+  padding: 73px;
+  .br {
+    background: #ffffff;
+    border-radius: 6px;
+    width: 59px;
+    height: 2.29px;
+    margin-left: 50%;
+    margin-top: 10px;
+    transform: translateX(-50%);
+  }
+  h3 {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    color: #3f3d56;
+    text-align: center;
+  }
+  .review {
+    margin-top: 88px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 50px;
+    .img {
+      width: 200px;
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .info {
+      margin-left: 4%;
+      width: 30%;
+      .name {
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 48px;
+        color: #3f3d56;
+      }
+      .position {
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 48px;
+        color: #2f2e41;
+      }
+    }
+    .describe {
+      margin-left: 4%;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 30px;
+      letter-spacing: 0.01em;
+      color: #2f2e41;
+    }
+  }
+}
+.footer {
+  background: linear-gradient(183.41deg, #f09e3e -8.57%, #ffd94f 82.96%);
+  opacity: 0.8;
+  margin-top: 200px;
+  display: flex;
+  padding: 100px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  div {
+    margin-bottom: 20px;
+  }
+  .plexpress {
+    width: 25%;
+  }
+  .title {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+    color: #2f2e41;
+  }
+  .descrip {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    color: #3f3d56;
+  }
+  .item {
+    font-family: "Mulish";
+    font-style: normal;
+    font-size: 16px;
+    line-height: 25px;
+    color: #2f2e41;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      color: black;
+      font-weight: 600;
+    }
+  }
+  .list {
+    display: flex;
+    justify-content: space-between;
+    img {
+      cursor: pointer;
+    }
+  }
+}
+@media only screen and (max-width: 1350px) {
+  .header-one {
+    .title {
+      font-size: 40px;
+    }
+  }
+  .header .header-one .mua-h-v6 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+@media only screen and (max-width: 1255px) {
+  .header-one {
+    .title {
+      font-size: 35px;
+    }
+  }
+  .header .header-one .mua-h-v6 {
+    font-size: 36px;
+    line-height: 45px;
+  }
+  .content-6 .review .info {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .header-one {
+    .title {
+      font-size: 30px;
+    }
+  }
+  .header .header-one .mua-h-v6 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .header .header-one .chng-ti-vi {
+    font-size: 22px;
+  }
+  .content-6 .review .info {
+    width: 65%;
+  }
+}
+.nowrap {
+  flex-wrap: nowrap;
+}
+.flex-end {
+  justify-content: flex-end !important;
+}
+@media only screen and (max-width: 1000px) {
+  .content-6 .review .info {
+    width: 120%;
+  }
+  .header .header-one .onboarding-icon {
+    padding: 0px 2% 0 0;
+    width: 350px;
+  }
+  .header .bg-icon {
+    width: 350px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .header .bg-icon {
+    width: 200px;
+  }
+  .content-3 .content4-icon {
+    display: none;
+  }
+  .content .content-2 .Service-icon {
+    width: 300px;
+  }
+  .content-6 .review .info .name {
+    line-height: 30px;
+  }
+  .content-6 .review .info .position {
+    line-height: 30px;
+  }
+}
