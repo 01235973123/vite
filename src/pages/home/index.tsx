@@ -30,8 +30,8 @@ import Service from "../../assets/service.svg";
 import GooglePlay from "../../assets/google-play.svg";
 import Ios from "../../assets/ios.svg";
 import Bg from "../../assets/bg.svg";
-import Bg2 from "../../assets/bg-2.svg";
 import "./index.scss";
+import Bg2 from "../../assets/bg-2.svg";
 
 const Home = () => {
   return (
