@@ -630,8 +630,7 @@
   .content-3 .news .new-icon {
     width: 100%;
   }
-  :where(.css-dev-only-do-not-override-1vtf12y).ant-drawer-right
-    > .ant-drawer-content-wrapper {
+  .ant-drawer-right > .ant-drawer-content-wrapper {
     width: 300px !important;
   }
 }

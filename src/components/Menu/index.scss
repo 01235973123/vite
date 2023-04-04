@@ -126,10 +126,7 @@ nav ul li a:hover {
     color: black;
   }
 }
-:where(.css-dev-only-do-not-override-1vtf12y).ant-menu-dark
-  .ant-menu-item-selected,
-:where(.css-dev-only-do-not-override-1vtf12y).ant-menu-dark
-  > .ant-menu
+.ant-menu
   .ant-menu-item-selected {
   background-color: #ff8616;
 }
