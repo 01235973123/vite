@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import "./index.scss";
 import Uk from "../../assets/uk.svg";
 import Us from "../../assets/us.svg";
 import Jav from "../../assets/jav.svg";
@@ -22,11 +23,10 @@ import New1 from "../../assets/new-1.svg";
 import New2 from "../../assets/new-2.svg";
 import Avatar from "../../assets/avatar.svg";
 import Service from "../../assets/service.svg";
-import "./index.scss";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-const Home = () => {
+const Landing = () => {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -307,4 +307,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Landing;
