@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Autoplay, EffectFade } from "swiper";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
-import "swiper/css";
-import MenuToggle from "../../components/Menu";
-import Onboarding from "../../assets/onboarding.svg";
-import Logo from "../../assets/logo.svg";
+import "swiper/css/effect-fade";
 import Uk from "../../assets/uk.svg";
 import Us from "../../assets/us.svg";
 import Jav from "../../assets/jav.svg";
@@ -17,51 +15,32 @@ import Bodaonha from "../../assets/bodaonha.svg";
 import Content3 from "../../assets/content-3.svg";
 import Content4 from "../../assets/content-4.svg";
 import Content5 from "../../assets/content-5.svg";
-import Confirm from "../../assets/confirm.svg";
-import Fb from "../../assets/fb.svg";
-import Linked from "../../assets/linked.svg";
-import Twitter from "../../assets/twitter.svg";
-import Google from "../../assets/google.svg";
-import Youtube from "../../assets/youtube.svg";
 import ArrowBellow from "../../assets/arrow-bellow.svg";
 import Tamnhin from "../../assets/tamnhin.svg";
 import Sumenh from "../../assets/sumenh.svg";
 import Giatri from "../../assets/giatri.svg";
+import New1 from "../../assets/new-1.svg";
+import New2 from "../../assets/new-2.svg";
+import Avatar from "../../assets/avatar.svg";
 import Service from "../../assets/service.svg";
-import GooglePlay from "../../assets/google-play.svg";
-import Ios from "../../assets/ios.svg";
-import Bg from "../../assets/bg.svg";
 import "./index.scss";
-import Bg2 from "../../assets/bg-2.svg";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const Home = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+  }, []);
+
   return (
     <React.Fragment>
-      <div className="header">
-        <img className="bg-icon" alt="" src={Bg} />
-        <img className="bg-icon bg-2" alt="" src={Bg2} />
-        <div className="header-one top">
-          <div className="left">
-            <img className="logo-icon" alt="" src={Logo} />
-            <h1 className="title">Phúc Long Express</h1>
-          </div>
-          <MenuToggle />
-        </div>
-        <div className="header-one second">
-          <div className="description-short">
-            <b className="mua-h-v6">
-              {" "}
-              Mua hộ và vận chuyển từ US, EU về Việt Nam.
-            </b>
-            <div className="chng-ti-vi">{`Tải App để trải nghiệm dịch vụ của chúng tôi `}</div>
-            <div className="dowload">
-              <img className="dowload-icon" alt="" src={GooglePlay} />
-              <img className="dowload-icon ios" alt="" src={Ios} />
-            </div>
-          </div>
-          <img className="onboarding-icon" alt="" src={Onboarding} />
-        </div>
-      </div>
+      <Header />
       <div className="content">
         <div className="content-1">
           <p className="text-1">Giới thiệu chung</p>
@@ -98,7 +77,7 @@ const Home = () => {
           </div>
         </div>
         <div className="content-1">
-          <p className="text-1">Dịch vụ</p>
+          <p className="text-1">Quốc gia hỗ trợ dịch vụ</p>
           <div className="br-1"></div>
           <p className="text-2">
             Chúng tôi cung cấp đa dạng dịch vụ để khách hàng có thể chọn lựa phù
@@ -108,44 +87,70 @@ const Home = () => {
         <div className="body">
           <div className="content-2">
             <img className="Service-icon" alt="" src={Service} />
-            <div className="block">
-              <div className="block-country">
-                <img className="Uk-icon" alt="" src={Uk} />
-                <p className="text-3">Mua hộ và vận chuyển UK</p>
-              </div>
-            </div>
-            <div className="block">
-              <div className="block-country">
-                <img className="Us-icon" alt="" src={Us} />
-                <p className="text-3">Mua hộ và vận chuyển US</p>
-              </div>
-            </div>
-            <div className="block">
-              <div className="block-country">
-                <img className="Jav-icon" alt="" src={Jav} />
-                <p className="text-3">Mua hộ và vận chuyển Nhật Bản</p>
-              </div>
-            </div>
-            <div className="block">
-              <div className="block-country">
-                <img className="Tbn-icon" alt="" src={Tbn} />
-                <p className="text-3">Mua hộ và vận chuyển Tây Ban Nha.</p>
-              </div>
-            </div>
-            <div className="block">
-              <div className="block-country">
-                <img className="Balan-icon" alt="" src={Balan} />
-                <p className="text-3">Mua hộ và vận chuyển Ba Lan.</p>
-              </div>
-            </div>
-            <div className="block">
-              <div className="block-country">
-                <img className="Bodaonha-icon" alt="" src={Bodaonha} />
-                <p className="text-3">Mua hộ và vận chuyển Bồ Đào Nha.</p>
-              </div>
-            </div>
+            <Swiper
+              style={{ width: "80%", height: 300, padding: "0 20px" }}
+              slidesPerView={width < 800 ? 1 : 3}
+              spaceBetween={30}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Autoplay, Pagination]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <div className="block">
+                  <div className="block-country">
+                    <img className="Uk-icon" alt="" src={Uk} />
+                    <p className="text-3">Mua hộ và vận chuyển UK</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="block">
+                  <div className="block-country">
+                    <img className="Us-icon" alt="" src={Us} />
+                    <p className="text-3">Mua hộ và vận chuyển US</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="block">
+                  <div className="block-country">
+                    <img className="Jav-icon" alt="" src={Jav} />
+                    <p className="text-3">Mua hộ và vận chuyển Nhật Bản</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="block">
+                  <div className="block-country">
+                    <img className="Balan-icon" alt="" src={Balan} />
+                    <p className="text-3">Mua hộ và vận chuyển Ba Lan.</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="block">
+                  <div className="block-country">
+                    <img className="Bodaonha-icon" alt="" src={Bodaonha} />
+                    <p className="text-3">Mua hộ và vận chuyển Bồ Đào Nha.</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="block">
+                  <div className="block-country">
+                    <img className="Tbn-icon" alt="" src={Tbn} />
+                    <p className="text-3">Mua hộ và vận chuyển Tây Ban Nha.</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
-          <div className="more">Xem thêm</div>
         </div>
         <div className="content-3">
           <img className="Content3-icon" alt="" src={Content3} />
@@ -153,32 +158,28 @@ const Home = () => {
             <h3>Tin tức</h3>
             <div className="br"></div>
             <div className="block-new">
-              <img
-                className="new-icon"
-                alt=""
-                src={
-                  "https://image.tienphong.vn/600x315/Uploaded/2023/cajwqxjwp/2021_09_04/h1-361-1027.jpeg"
-                }
-              />
+              <img className="new-icon" alt="" src={New1} />
               <div className="info">
-                <p className="title">
-                  PLExpress post tung dịch vụ đồng giá 30k
-                </p>
+                <a
+                  href="https://baotintuc.vn/kinh-te/logistics-xanh-huong-di-moi-de-phat-trien-ben-vung-20230401073856267.htm"
+                  className="title"
+                  target="_blank"
+                >
+                  Logistics xanh- Hướng đi mới để phát triển bền vững
+                </a>
                 <p className="date">Ngày đăng: 30/01/2023</p>
               </div>
             </div>
             <div className="block-new">
-              <img
-                className="new-icon"
-                alt=""
-                src={
-                  "https://image.tienphong.vn/600x315/Uploaded/2023/cajwqxjwp/2021_09_04/h1-361-1027.jpeg"
-                }
-              />
+              <img className="new-icon" alt="" src={New2} />
               <div className="info">
-                <p className="title">
-                  PLExpress post tung dịch vụ đồng giá 30k
-                </p>
+                <a
+                  href="https://baotintuc.vn/kinh-te/chuyen-doi-so-thuc-day-tang-truong-va-phat-trien-ben-vung-20230321122719141.htm"
+                  className="title"
+                  target="_blank"
+                >
+                  Chuyển đổi số thúc đẩy tăng trưởng và phát triển bền vững
+                </a>
                 <p className="date">Ngày đăng: 30/01/2023</p>
               </div>
             </div>
@@ -208,7 +209,7 @@ const Home = () => {
               clickable: true,
             }}
             modules={[Pagination]}
-            className="mySwiper"
+            className="mang-luoi"
           >
             <SwiperSlide>
               <div>
@@ -257,20 +258,20 @@ const Home = () => {
           <div className="br"></div>
           <Swiper
             spaceBetween={30}
+            effect={"fade"}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
             pagination={{
               clickable: true,
             }}
-            modules={[Pagination]}
-            className="mySwiper"
+            modules={[EffectFade, Autoplay, Pagination]}
           >
             <SwiperSlide>
               <div className="review">
                 <div className="img">
-                  <img
-                    className="avatar"
-                    alt=""
-                    src="https://luv.vn/wp-content/uploads/2022/06/gai-xinh-cap-3-luv-17.jpg"
-                  />
+                  <img className="avatar" alt="" src={Avatar} />
                 </div>
                 <div className="info">
                   <p className="name">Nguyễn Minh Anh</p>
@@ -286,100 +287,22 @@ const Home = () => {
             <SwiperSlide>
               <div className="review">
                 <div className="img">
-                  <img
-                    className="avatar"
-                    alt=""
-                    src="https://luv.vn/wp-content/uploads/2022/06/gai-xinh-cap-3-luv-17.jpg"
-                  />
+                  <img className="avatar" alt="" src={Avatar} />
                 </div>
                 <div className="info">
-                  <p className="name">Nguyễn Minh Anh</p>
-                  <p className="position">Nhân viên văn phòng</p>
+                  <p className="name">Phạm Khánh Nguyên</p>
+                  <p className="position">Nội trợ</p>
                 </div>
                 <div className="describe">
-                  “ Nhân viên giao hàng rất nhiệt tình, tác phong lịch sử. Đó là
-                  điều thu hút mình sử dụng dịch vụ của PLExpress trong suốt 1
-                  năm qua"
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="review">
-                <div className="img">
-                  <img
-                    className="avatar"
-                    alt=""
-                    src="https://luv.vn/wp-content/uploads/2022/06/gai-xinh-cap-3-luv-17.jpg"
-                  />
-                </div>
-                <div className="info">
-                  <p className="name">Nguyễn Minh Anh</p>
-                  <p className="position">Nhân viên văn phòng</p>
-                </div>
-                <div className="describe">
-                  “ Nhân viên giao hàng rất nhiệt tình, tác phong lịch sử. Đó là
-                  điều thu hút mình sử dụng dịch vụ của PLExpress trong suốt 1
-                  năm qua"
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="review">
-                <div className="img">
-                  <img
-                    className="avatar"
-                    alt=""
-                    src="https://luv.vn/wp-content/uploads/2022/06/gai-xinh-cap-3-luv-17.jpg"
-                  />
-                </div>
-                <div className="info">
-                  <p className="name">Nguyễn Minh Anh</p>
-                  <p className="position">Nhân viên văn phòng</p>
-                </div>
-                <div className="describe">
-                  “ Nhân viên giao hàng rất nhiệt tình, tác phong lịch sử. Đó là
-                  điều thu hút mình sử dụng dịch vụ của PLExpress trong suốt 1
-                  năm qua"
+                  “ Với tinh thần trách nhiệm cao, nhân viên tại PLExpress đã hỗ
+                  trợ tôi rất tận tâm và chu đáo. Tôi thấy thật đúng đắng khi
+                  chọn PLExpress là người bạn đáng tin cậy trong những năm qua."
                 </div>
               </div>
             </SwiperSlide>
           </Swiper>
         </div>
-        <div className="footer">
-          <div className="plexpress">
-            <p className="title">PLExpress</p>
-            <p className="descrip">
-              Giao hàng nhanh chóng, thông minh, tiết kiệm với tôn chỉ trải
-              nghiệm của khách hàng là những cốt lõi chúng tôi hướng đến. Địa
-              chỉ văn phòng: Số 6, Trương Công Giai, Cầu Giấy, Hà Nội Số điện
-              thoại liên hệ: 03453545274
-            </p>
-          </div>
-          <div className="about">
-            <p className="title">Về PLExpress</p>
-            <p className="item">Giới thiệu</p>
-            <p className="item">Tin tức</p>
-            <p className="item">Tuyển dụng</p>
-            <p className="item">Apps</p>
-            <p className="item">Chính sách và điều khoản</p>
-          </div>
-          <div className="about">
-            <p className="title">Hỗ trợ khách hàng</p>
-            <p className="item">Trung tâm hỗ trợ</p>
-            <p className="item">Hỗ trợ liên hệ</p>
-          </div>
-          <div className="social">
-            <img className="confirm-icon" alt="" src={Confirm} />
-            <p className="title">Liên hệ với chúng tôi</p>
-            <div className="list">
-              <img className="confirm-icon" alt="" src={Fb} />
-              <img className="confirm-icon" alt="" src={Linked} />
-              <img className="confirm-icon" alt="" src={Twitter} />
-              <img className="confirm-icon" alt="" src={Google} />
-              <img className="confirm-icon" alt="" src={Youtube} />
-            </div>
-          </div>
-        </div>
+        <Footer />
       </div>
     </React.Fragment>
   );
