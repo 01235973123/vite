@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper";
-import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
