@@ -89,6 +89,7 @@
       #ffffff -10.34%,
       rgba(251, 135, 0, 0.6) 106.36%
     );
+    transition: all 0.5s ease;
     &:hover {
       background: rgba(251, 135, 0, 0.6) !important;
     }
