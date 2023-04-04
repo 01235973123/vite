@@ -1,6 +1,88 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.menu-toggle {
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.menu-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.menu-toggle span {
+  margin-right: 10px;
+  display: block;
+  width: 25px;
+  margin-bottom: 5px;
+  position: relative;
+  border-radius: 3px;
+  z-index: 1;
+  &:active {
+    transform: scale(1.1);
+  }
+}
+
+.menu-toggle span:last-child {
+  margin-bottom: 0;
+}
+
+.menu-toggle input[type="checkbox"]:checked ~ ul {
+  display: block;
+}
+
+.menu-toggle input[type="checkbox"]:checked ~ span:nth-child(2) {
+  transform: rotate(45deg);
+  top: 7px;
+}
+
+.menu-toggle input[type="checkbox"]:checked ~ span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: -7px;
+}
+
+.menu-toggle input[type="checkbox"]:checked ~ span:nth-child(4) {
+  opacity: 0;
+}
+
+nav ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-bottom: 1rem;
+}
+
+nav ul li a {
+  color: #333333;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #f47c48;
+}
+.mobile {
+  display: none;
+}
 .menu {
   display: flex;
-  padding: 23px 2% 0 0;
+  width: -webkit-fill-available;
   .menu-item {
     padding: 10px 20px;
     height: min-content;
@@ -14,8 +96,49 @@
     opacity: 0.5;
     transition: all 0.5s;
     &:hover {
-        opacity: 1;
-        transition-timing-function: ease;
+      opacity: 1;
+      transition-timing-function: ease;
     }
+  }
+  .active {
+    opacity: 1;
+  }
+}
+.ant-drawer-wrapper-body {
+  background: linear-gradient(
+    90.47deg,
+    #ffffff -10.34%,
+    rgba(251, 135, 0, 0.6) 106.36%
+  );
+}
+.ant-drawer-content {
+  background: linear-gradient(
+    90.47deg,
+    #ffffff -10.34%,
+    rgba(251, 135, 0, 0.6) 106.36%
+  );
+  .ant-menu {
+    background: linear-gradient(
+      90.47deg,
+      #ffffff -10.34%,
+      rgba(251, 135, 0, 0.6) 106.36%
+    );
+    color: black;
+  }
+}
+:where(.css-dev-only-do-not-override-1vtf12y).ant-menu-dark
+  .ant-menu-item-selected,
+:where(.css-dev-only-do-not-override-1vtf12y).ant-menu-dark
+  > .ant-menu
+  .ant-menu-item-selected {
+  background-color: #ff8616;
+}
+@media only screen and (max-width: 1430px) {
+  .mobile {
+    display: block;
+    padding-right: 20px;
+  }
+  .menu {
+    display: none;
   }
 }

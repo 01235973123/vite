@@ -1,12 +1,13 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Parallax, Navigation, Pagination } from "swiper";
+import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import "swiper/css";
-import Menu from "../../components/Menu";
+import MenuToggle from "../../components/Menu";
 import Onboarding from "../../assets/onboarding.svg";
+import Logo from "../../assets/logo.svg";
 import Uk from "../../assets/uk.svg";
 import Us from "../../assets/us.svg";
 import Jav from "../../assets/jav.svg";
@@ -39,21 +40,24 @@ const Home = () => {
       <div className="header">
         <img className="bg-icon" alt="" src={Bg} />
         <img className="bg-icon bg-2" alt="" src={Bg2} />
-        <div className="header-one flex-end">
-          <Menu />
+        <div className="header-one top">
+          <div className="left">
+            <img className="logo-icon" alt="" src={Logo} />
+            <h1 className="title">Phúc Long Express</h1>
+          </div>
+          <MenuToggle />
         </div>
-        <div className="header-one">
-          <h1 className="title">Phúc Long Express</h1>
-        </div>
-        <div className="header-one">
+        <div className="header-one second">
           <div className="description-short">
             <b className="mua-h-v6">
               {" "}
               Mua hộ và vận chuyển từ US, EU về Việt Nam.
             </b>
             <div className="chng-ti-vi">{`Tải App để trải nghiệm dịch vụ của chúng tôi `}</div>
-            <img className="dowload-icon" alt="" src={GooglePlay} />
-            <img className="dowload-icon ios" alt="" src={Ios} />
+            <div className="dowload">
+              <img className="dowload-icon" alt="" src={GooglePlay} />
+              <img className="dowload-icon ios" alt="" src={Ios} />
+            </div>
           </div>
           <img className="onboarding-icon" alt="" src={Onboarding} />
         </div>
