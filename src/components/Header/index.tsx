@@ -1,4 +1,4 @@
-import "../../pages/Home/index.scss";
+import "../../pages/Landing/index.scss";
 import MenuToggle from "../Menu";
 import Onboarding from "../../assets/onboarding.svg";
 import Logo from "../../assets/logo.svg";

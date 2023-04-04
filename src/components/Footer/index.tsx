@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../pages/Home/index.scss";
+import "../../pages/Landing/index.scss";
 import Confirm from "../../assets/confirm.svg";
 import Fb from "../../assets/fb.svg";
 import Linked from "../../assets/linked.svg";
