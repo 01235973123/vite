@@ -262,7 +262,7 @@ const Landing = () => {
         </div>
         <div className="content-3 content-5" id="about-us">
           <img className="Content3-icon content5-icon" alt="" src={Content5} />
-          <div style={{ width: "50%", height: 300, padding: "0 20px" }}>
+          <div className="network">
             <h3>Mạng lưới đối tác lớn</h3>
             <div className="br"></div>
             <p className="descrip">
