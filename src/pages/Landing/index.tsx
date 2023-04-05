@@ -262,7 +262,16 @@ const Landing = () => {
         </div>
         <div className="content-3 content-5" id="about-us">
           <img className="Content3-icon content5-icon" alt="" src={Content5} />
-          <Swiper
+          <div>
+            <h3>Mạng lưới đối tác lớn</h3>
+            <div className="br"></div>
+            <p className="descrip">
+              Chúng tôi đang hợp tác với rất nhiều đối tác vận chuyển uy tín,
+              chất lượng và tốc độ, đảm bảo đem đến chất lượng tốt nhất cho
+              khách hàng.
+            </p>
+          </div>
+          {/* <Swiper
             style={{ width: "50%", height: 300, padding: "0 20px" }}
             spaceBetween={30}
             pagination={{
@@ -312,7 +321,7 @@ const Landing = () => {
                 </p>
               </div>
             </SwiperSlide>
-          </Swiper>
+          </Swiper> */}
           <InView
             as="div"
             onChange={(inView, entry) => inView && setMenuActive(4)}
