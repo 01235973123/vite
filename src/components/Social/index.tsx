@@ -10,14 +10,17 @@ import "./index.scss";
 const Social = () => {
   const content = (
     <div className="content">
-      <a href="https://www.facebook.com/phuclongexpress?mibextid=LQQJ4d" target={"_blank"}>
+      <a
+        href="https://www.facebook.com/phuclongexpress?mibextid=LQQJ4d"
+        target={"_blank"}
+      >
         <Button icon={<FacebookOutlined />} type="primary">
           Facebook
         </Button>
       </a>
-        <Button icon={<PhoneOutlined />} type="primary">
-          Phone : 0989000320
-        </Button>
+      <Button icon={<PhoneOutlined />} type="primary">
+        0989000320
+      </Button>
     </div>
   );
 

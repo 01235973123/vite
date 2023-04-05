@@ -7,6 +7,9 @@ import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "./index.scss";
+import Slider, { Settings } from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Uk from "../../assets/uk.svg";
 import Us from "../../assets/us.svg";
 import Jav from "../../assets/jav.svg";
@@ -29,6 +32,25 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Social from "../../components/Social";
 
+const settings: Settings = {
+  dots: true,
+  arrows: false,
+  infinite: true,
+  swipe: true,
+  swipeToSlide: true,
+  draggable: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  vertical: true,
+  verticalSwiping: true,
+  fade: true,
+  cssEase: "linear",
+  autoplay: true,
+  autoplaySpeed: 5000,
+  pauseOnHover: true,
+};
+
 const Landing = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuActive, setMenuActive] = useState(1);
@@ -43,11 +65,11 @@ const Landing = () => {
 
   return (
     <React.Fragment>
-      <InView as="div" onChange={(inView, entry) =>inView && setMenuActive(1)}>
+      <InView as="div" onChange={(inView, entry) => inView && setMenuActive(1)}>
         <Header menuActive={menuActive} />
       </InView>
       <div className="content">
-        <div className="content-1">
+        <div className="content-1 top-mg">
           <img
             className="dot"
             style={{ top: "50%", left: "65%" }}
@@ -93,7 +115,8 @@ const Landing = () => {
             </div>
           </div>
         </div>
-        <div className="content-1" id="service">
+        <div id="service"></div>
+        <div className="content-1">
           <img
             className="dot"
             style={{ top: "-80%", left: "40%" }}
@@ -107,7 +130,10 @@ const Landing = () => {
             hợp với nhu cầu.
           </p>
         </div>
-        <InView as="div" onChange={(inView, entry) => inView && setMenuActive(2)} />
+        <InView
+          as="div"
+          onChange={(inView, entry) => inView && setMenuActive(2)}
+        />
         <div className="body">
           <div className="content-2">
             <img
@@ -135,7 +161,7 @@ const Landing = () => {
                 <div className="block">
                   <div className="block-country">
                     <img className="Uk-icon" alt="" src={Uk} />
-                    <p className="text-3">Mua hộ và vận chuyển UK</p>
+                    <p className="text-3">UK</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -143,7 +169,7 @@ const Landing = () => {
                 <div className="block">
                   <div className="block-country">
                     <img className="Us-icon" alt="" src={Us} />
-                    <p className="text-3">Mua hộ và vận chuyển US</p>
+                    <p className="text-3">US</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -151,7 +177,7 @@ const Landing = () => {
                 <div className="block">
                   <div className="block-country">
                     <img className="Jav-icon" alt="" src={Jav} />
-                    <p className="text-3">Mua hộ và vận chuyển Nhật Bản</p>
+                    <p className="text-3">Nhật Bản</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -159,7 +185,7 @@ const Landing = () => {
                 <div className="block">
                   <div className="block-country">
                     <img className="Balan-icon" alt="" src={Balan} />
-                    <p className="text-3">Mua hộ và vận chuyển Ba Lan.</p>
+                    <p className="text-3">Ba Lan</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -167,7 +193,7 @@ const Landing = () => {
                 <div className="block">
                   <div className="block-country">
                     <img className="Bodaonha-icon" alt="" src={Bodaonha} />
-                    <p className="text-3">Mua hộ và vận chuyển Bồ Đào Nha.</p>
+                    <p className="text-3">Bồ Đào Nha</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -175,7 +201,7 @@ const Landing = () => {
                 <div className="block">
                   <div className="block-country">
                     <img className="Tbn-icon" alt="" src={Tbn} />
-                    <p className="text-3">Mua hộ và vận chuyển Tây Ban Nha.</p>
+                    <p className="text-3">Tây Ban Nha</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -215,7 +241,10 @@ const Landing = () => {
             </div>
           </div>
         </div>
-        <InView as="div" onChange={(inView, entry) => inView && setMenuActive(3)} />
+        <InView
+          as="div"
+          onChange={(inView, entry) => inView && setMenuActive(3)}
+        />
         <div className="content-3 nowrap">
           <div>
             <h3>Tải app để trải nghiệm dịch vụ của chúng tôi.</h3>
@@ -244,11 +273,12 @@ const Landing = () => {
           >
             <SwiperSlide>
               <div>
-                <h3>Mạng lưới đối tác rộng khắp</h3>
+                <h3>Mạng lưới đối tác lớn</h3>
                 <div className="br"></div>
                 <p className="descrip">
-                  Chúng tôi đã hợp tác với rất nhiều khách hàng uy tín, đảm bảo
-                  đem đến chất lượng tốt nhất cho khách hàng.
+                  Chúng tôi đang hợp tác với rất nhiều đối tác vận chuyển uy
+                  tín, chất lượng và tốc độ, đảm bảo đem đến chất lượng tốt nhất
+                  cho khách hàng.
                 </p>
               </div>
             </SwiperSlide>
@@ -283,7 +313,10 @@ const Landing = () => {
               </div>
             </SwiperSlide>
           </Swiper>
-          <InView as="div" onChange={(inView, entry) =>inView && setMenuActive(4)} />
+          <InView
+            as="div"
+            onChange={(inView, entry) => inView && setMenuActive(4)}
+          />
         </div>
         <div className="content-6">
           <h3>Khách hàng nói về PLExpress</h3>
@@ -300,19 +333,8 @@ const Landing = () => {
             src={Dotblue}
           />
           <div className="br"></div>
-          <Swiper
-            spaceBetween={30}
-            effect={"fade"}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[EffectFade, Autoplay, Pagination]}
-          >
-            <SwiperSlide>
+          <div className="slider-container" style={{ touchAction: "pan-y" }}>
+            <Slider {...settings}>
               <div className="review">
                 <div className="img">
                   <img className="avatar" alt="" src={Avatar} />
@@ -327,8 +349,6 @@ const Landing = () => {
                   năm qua"
                 </div>
               </div>
-            </SwiperSlide>
-            <SwiperSlide>
               <div className="review">
                 <div className="img">
                   <img className="avatar" alt="" src={Avatar} />
@@ -343,8 +363,8 @@ const Landing = () => {
                   chọn PLExpress là người bạn đáng tin cậy trong những năm qua."
                 </div>
               </div>
-            </SwiperSlide>
-          </Swiper>
+            </Slider>
+          </div>
         </div>
         <Footer />
       </div>

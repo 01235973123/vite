@@ -1,3 +1,6 @@
+#service {
+  height: 230px;
+}
 .header {
   background: linear-gradient(
       180deg,
@@ -134,7 +137,6 @@
     flex-direction: column;
     align-items: center;
     row-gap: 15px;
-    margin-top: 230px;
     .about-common {
       margin-top: 145px;
       display: flex;
@@ -187,6 +189,7 @@
       border-radius: 5px;
     }
     .text-2 {
+      text-align: center;
       font-family: "Montserrat";
       font-style: normal;
       font-weight: 500;
@@ -195,6 +198,9 @@
       color: #7d7987;
       padding: 0 5%;
     }
+  }
+  .top-mg {
+    margin-top: 230px;
   }
   .content-2 {
     position: relative;
@@ -212,8 +218,8 @@
     }
     .block-country {
       z-index: 800;
-      width: 250px;
-      height: 300px;
+      width: 200px;
+      height: 260px;
       background: linear-gradient(180deg, #ffd94f 0%, #fb8700 100%);
       box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
       border-radius: 20px;
@@ -341,6 +347,14 @@
   border-radius: 24px;
   padding: 70px 25px;
   margin: 0 5%;
+  .slick-dots li button:before {
+    color: #cccccc;
+    font-size: 9px;
+    line-height: 9px;
+  }
+  .slick-dots li.slick-active button:before {
+    color: #007aff;
+  }
   .br {
     background: #ffffff;
     border-radius: 6px;
@@ -361,12 +375,10 @@
   }
   .review {
     margin-top: 88px;
-    display: flex;
+    display: flex !important;
     padding-bottom: 50px;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     cursor: pointer;
     .img {
       width: 200px;
@@ -380,6 +392,7 @@
     }
     .info {
       text-align: center;
+      width: -webkit-fill-available;
       .name {
         font-family: "Mulish";
         font-style: normal;
@@ -441,6 +454,11 @@
     line-height: 27px;
     letter-spacing: 0.01em;
     color: #3f3d56;
+    display: flex;
+    .icon {
+      margin-top: 2px;
+      margin-right: 10px;
+    }
   }
   .item {
     font-family: "Mulish";
@@ -511,7 +529,7 @@
   justify-content: flex-end !important;
 }
 .Content3-icon {
-  width: 45%;
+  width: 40%;
 }
 .content-3 .news {
   width: 50%;
@@ -576,6 +594,16 @@
   }
 }
 @media only screen and (max-width: 500px) {
+  #service {
+    height: 0px;
+  }
+  .content-6 .review .img {
+    width: auto;
+  }
+  .review {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
   .header-one .title {
     font-size: 18px;
   }

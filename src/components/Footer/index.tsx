@@ -8,6 +8,9 @@ import Twitter from "../../assets/twitter.svg";
 import Google from "../../assets/google.svg";
 import Youtube from "../../assets/youtube.svg";
 import Dotblue from "../../assets/dot-blue.svg";
+import { PhoneOutlined } from "@ant-design/icons";
+import { GoLocation } from "react-icons/go";
+import { SiGmail } from "react-icons/si";
 
 const Footer = () => {
   const scrollTop = () => {
@@ -28,16 +31,33 @@ const Footer = () => {
         src={Dotblue}
       />
       <div className="plexpress">
-        <p className="title">PLExpress</p>
+        <p className="title">Phúc Long Express</p>
         <p className="descrip">
-          Giao hàng nhanh chóng, thông minh, tiết kiệm với tôn chỉ trải nghiệm
-          của khách hàng là những cốt lõi chúng tôi hướng đến. Địa chỉ văn
-          phòng: Số 6, Trương Công Giai, Cầu Giấy, Hà Nội Số điện thoại liên hệ:
-          03453545274
+          Phúc Long Express là công ty doanh nghiệp chuyên cung cấp dịch vụ vận
+          chuyển và mua hộ hàng từ EU, UK về Việt Nam
+        </p>
+        <p className="descrip">Thông tin liên hệ</p>
+        <p className="descrip">
+          <span className="icon">
+            <GoLocation />
+          </span>{" "}
+          Văn phòng giao dịch: 60 Trương Công Giai, Dịch Vọng, Cầu Giấy, Hà Nội
+        </p>
+        <p className="descrip">
+          <span className="icon">
+            <SiGmail />
+          </span>{" "}
+          phuclongexpress@gmail.com
+        </p>
+        <p className="descrip">
+          <span className="icon">
+            <PhoneOutlined />
+          </span>{" "}
+          0989000320
         </p>
       </div>
       <div className="about">
-        <p className="title">Về PLExpress</p>
+        <p className="title">Về Phúc Long Express</p>
         <p className="item">Giới thiệu</p>
         <p className="item">Tin tức</p>
         <p className="item">Tuyển dụng</p>
