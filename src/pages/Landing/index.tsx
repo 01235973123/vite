@@ -257,10 +257,11 @@ const Landing = () => {
               Download
               <img className="arrow-icon" alt="" src={ArrowBellow} />
             </div>
+            <div id="about-us"></div>
           </div>
           <img className="Content3-icon content4-icon" alt="" src={Content4} />
         </div>
-        <div className="content-3 content-5" id="about-us">
+        <div className="content-3 content-5">
           <img className="Content3-icon content5-icon" alt="" src={Content5} />
           <div className="network">
             <h3>Mạng lưới đối tác lớn</h3>

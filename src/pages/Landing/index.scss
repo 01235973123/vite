@@ -1,6 +1,10 @@
 #service {
   height: 230px;
 }
+#about-us {
+  position: absolute;
+  bottom: 100px;
+}
 .network {
   width: 50%;
   height: 300px;
@@ -255,6 +259,7 @@
   }
 }
 .content-3 {
+  position: relative;
   display: flex;
   padding: 150px 5% 0 5%;
   justify-content: space-evenly;
