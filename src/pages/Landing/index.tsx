@@ -41,13 +41,9 @@ const Landing = () => {
     window.addEventListener("resize", handleResize);
   }, []);
 
-  const handleSpyEnter = (id: any) => {
-    console.log(`Phần tử ${id} đang hiển thị.`);
-  };
-
   return (
     <React.Fragment>
-      <InView as="div" onChange={(inView, entry) => setMenuActive(1)}>
+      <InView as="div" onChange={(inView, entry) =>inView && setMenuActive(1)}>
         <Header menuActive={menuActive} />
       </InView>
       <div className="content">
@@ -111,7 +107,7 @@ const Landing = () => {
             hợp với nhu cầu.
           </p>
         </div>
-        <InView as="div" onChange={(inView, entry) => setMenuActive(2)} />
+        <InView as="div" onChange={(inView, entry) => inView && setMenuActive(2)} />
         <div className="body">
           <div className="content-2">
             <img
@@ -219,7 +215,7 @@ const Landing = () => {
             </div>
           </div>
         </div>
-        <InView as="div" onChange={(inView, entry) => setMenuActive(3)} />
+        <InView as="div" onChange={(inView, entry) => inView && setMenuActive(3)} />
         <div className="content-3 nowrap">
           <div>
             <h3>Tải app để trải nghiệm dịch vụ của chúng tôi.</h3>
@@ -287,7 +283,7 @@ const Landing = () => {
               </div>
             </SwiperSlide>
           </Swiper>
-          <InView as="div" onChange={(inView, entry) => setMenuActive(4)} />
+          <InView as="div" onChange={(inView, entry) =>inView && setMenuActive(4)} />
         </div>
         <div className="content-6">
           <h3>Khách hàng nói về PLExpress</h3>
