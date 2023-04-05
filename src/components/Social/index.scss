@@ -1,0 +1,30 @@
+.social-popover {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(
+    90.47deg,
+    #e7b73a -10.34%,
+    rgba(251, 135, 0, 0.6) 106.36%
+  );
+}
+.ant-popover-inner {
+  background: linear-gradient(
+      180deg,
+      rgba(219, 177, 225, 0.4) 0%,
+      rgba(255, 217, 79, 0.4) 100%
+    ),
+    linear-gradient(18.11deg, rgba(252, 176, 23, 0.4) 20.3%, #ffd94f 127.76%);
+  .content {
+    display: flex !important;
+    flex-direction: column;
+    row-gap: 10px;
+    button {
+      width: 100%;
+      background: #dd9441;
+      &:hover{
+        background: #df7e0f;
+      }
+    }
+  }
+}

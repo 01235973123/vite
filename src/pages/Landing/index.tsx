@@ -25,6 +25,7 @@ import Avatar from "../../assets/avatar.svg";
 import Service from "../../assets/service.svg";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Social from "../../components/Social";
 
 const Landing = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -303,6 +304,7 @@ const Landing = () => {
         </div>
         <Footer />
       </div>
+      <Social />
     </React.Fragment>
   );
 };
