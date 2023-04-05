@@ -7,6 +7,7 @@ import Linked from "../../assets/linked.svg";
 import Twitter from "../../assets/twitter.svg";
 import Google from "../../assets/google.svg";
 import Youtube from "../../assets/youtube.svg";
+import Dotblue from "../../assets/dot-blue.svg";
 
 const Footer = () => {
   const scrollTop = () => {
@@ -14,6 +15,18 @@ const Footer = () => {
   };
   return (
     <div className="footer">
+      <img
+        className="dot"
+        style={{ top: "2%", right: "0" }}
+        alt=""
+        src={Dotblue}
+      />
+      <img
+        className="dot"
+        style={{ bottom: "0", left: "0" }}
+        alt=""
+        src={Dotblue}
+      />
       <div className="plexpress">
         <p className="title">PLExpress</p>
         <p className="descrip">

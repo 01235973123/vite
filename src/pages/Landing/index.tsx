@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper";
+import { InView } from "react-intersection-observer";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
@@ -23,12 +24,14 @@ import New1 from "../../assets/new-1.svg";
 import New2 from "../../assets/new-2.svg";
 import Avatar from "../../assets/avatar.svg";
 import Service from "../../assets/service.svg";
+import Dotblue from "../../assets/dot-blue.svg";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Social from "../../components/Social";
 
 const Landing = () => {
   const [width, setWidth] = useState(window.innerWidth);
+  const [menuActive, setMenuActive] = useState(1);
 
   useEffect(() => {
     function handleResize() {
@@ -38,11 +41,29 @@ const Landing = () => {
     window.addEventListener("resize", handleResize);
   }, []);
 
+  const handleSpyEnter = (id: any) => {
+    console.log(`Phần tử ${id} đang hiển thị.`);
+  };
+
   return (
     <React.Fragment>
-      <Header />
+      <InView as="div" onChange={(inView, entry) => setMenuActive(1)}>
+        <Header menuActive={menuActive} />
+      </InView>
       <div className="content">
         <div className="content-1">
+          <img
+            className="dot"
+            style={{ top: "50%", left: "65%" }}
+            alt=""
+            src={Dotblue}
+          />
+          <img
+            className="dot"
+            style={{ top: "80%", left: "12%" }}
+            alt=""
+            src={Dotblue}
+          />
           <p className="text-1">Giới thiệu chung</p>
           <div className="br-1"></div>
           <p className="text-2">
@@ -76,7 +97,13 @@ const Landing = () => {
             </div>
           </div>
         </div>
-        <div className="content-1">
+        <div className="content-1" id="service">
+          <img
+            className="dot"
+            style={{ top: "-80%", left: "40%" }}
+            alt=""
+            src={Dotblue}
+          />
           <p className="text-1">Quốc gia hỗ trợ dịch vụ</p>
           <div className="br-1"></div>
           <p className="text-2">
@@ -84,8 +111,15 @@ const Landing = () => {
             hợp với nhu cầu.
           </p>
         </div>
+        <InView as="div" onChange={(inView, entry) => setMenuActive(2)} />
         <div className="body">
           <div className="content-2">
+            <img
+              className="dot"
+              style={{ top: "80%", right: "15%" }}
+              alt=""
+              src={Dotblue}
+            />
             <img className="Service-icon" alt="" src={Service} />
             <Swiper
               style={{ width: "80%", height: 300, padding: "0 20px" }}
@@ -152,7 +186,7 @@ const Landing = () => {
             </Swiper>
           </div>
         </div>
-        <div className="content-3">
+        <div className="content-3" id="news">
           <img className="Content3-icon" alt="" src={Content3} />
           <div className="news">
             <h3>Tin tức</h3>
@@ -185,6 +219,7 @@ const Landing = () => {
             </div>
           </div>
         </div>
+        <InView as="div" onChange={(inView, entry) => setMenuActive(3)} />
         <div className="content-3 nowrap">
           <div>
             <h3>Tải app để trải nghiệm dịch vụ của chúng tôi.</h3>
@@ -200,7 +235,7 @@ const Landing = () => {
           </div>
           <img className="Content3-icon content4-icon" alt="" src={Content4} />
         </div>
-        <div className="content-3 content-5">
+        <div className="content-3 content-5" id="about-us">
           <img className="Content3-icon content5-icon" alt="" src={Content5} />
           <Swiper
             style={{ width: "50%", height: 300, padding: "0 20px" }}
@@ -252,9 +287,22 @@ const Landing = () => {
               </div>
             </SwiperSlide>
           </Swiper>
+          <InView as="div" onChange={(inView, entry) => setMenuActive(4)} />
         </div>
         <div className="content-6">
           <h3>Khách hàng nói về PLExpress</h3>
+          <img
+            className="dot"
+            style={{ top: "2%", right: "0%" }}
+            alt=""
+            src={Dotblue}
+          />
+          <img
+            className="dot"
+            style={{ top: "80%", left: "0%" }}
+            alt=""
+            src={Dotblue}
+          />
           <div className="br"></div>
           <Swiper
             spaceBetween={30}

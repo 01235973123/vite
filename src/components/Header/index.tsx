@@ -6,10 +6,12 @@ import GooglePlay from "../../assets/google-play.svg";
 import Bg from "../../assets/bg.svg";
 import Bg2 from "../../assets/bg-2.svg";
 import Ios from "../../assets/ios.svg";
+import Dot from "../../assets/dot.svg";
 
-const Header = () => {
+const Header = (props: any) => {
   return (
     <div className="header">
+      <img className="dot" style={{top: '20%', left: '12%'}} alt="" src={Dot} />
       <img className="bg-icon" alt="" src={Bg} />
       <img className="bg-icon bg-2" alt="" src={Bg2} />
       <div className="header-one top">
@@ -17,7 +19,7 @@ const Header = () => {
           <img className="logo-icon" alt="" src={Logo} />
           <h1 className="title">Phúc Long Express</h1>
         </div>
-        <MenuToggle />
+        <MenuToggle menuActive={props.menuActive} />
       </div>
       <div className="header-one second">
         <div className="description-short">
