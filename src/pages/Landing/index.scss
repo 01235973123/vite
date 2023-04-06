@@ -149,15 +149,15 @@
     .about-common {
       margin-top: 145px;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       flex-wrap: wrap;
-      padding: 0 5%;
+      padding: 0 7%;
       .item {
+        margin-top: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 30%;
-        padding: 20px;
         .icon {
           width: 200px;
           height: 100px;
@@ -179,7 +179,7 @@
           line-height: 24px;
           color: #000000;
           margin-top: 20px;
-          padding: 0 10%;
+          text-align: center;
         }
       }
     }
@@ -205,7 +205,7 @@
       font-size: 19px;
       line-height: 27px;
       color: #7d7987;
-      padding: 0 5%;
+      padding: 0 7%;
     }
   }
   .top-mg {
@@ -261,8 +261,8 @@
 .content-3 {
   position: relative;
   display: flex;
-  padding: 150px 5% 0 5%;
-  justify-content: space-evenly;
+  padding: 150px 7% 0 7%;
+  justify-content: space-between;
   flex-wrap: wrap;
   a {
     text-decoration: none;
@@ -353,7 +353,7 @@
   opacity: 0.8;
   border-radius: 24px;
   padding: 70px 25px;
-  margin: 0 5%;
+  margin: 0 7%;
   .slick-dots li button:before {
     color: #cccccc;
     font-size: 9px;
@@ -388,8 +388,8 @@
     align-items: center;
     cursor: pointer;
     .img {
-      width: 200px;
       text-align: center;
+      padding-right: 30px;
     }
     .avatar {
       width: 100px;
@@ -399,8 +399,8 @@
     }
     .info {
       text-align: center;
-      width: -webkit-fill-available;
       .name {
+        white-space: nowrap;
         font-family: "Mulish";
         font-style: normal;
         font-weight: 700;
@@ -409,6 +409,7 @@
         color: #3f3d56;
       }
       .position {
+        white-space: nowrap;
         font-family: "Mulish";
         font-style: normal;
         font-weight: 400;
@@ -418,6 +419,7 @@
       }
     }
     .describe {
+      width: -webkit-fill-available;
       margin-left: 4%;
       font-family: "Mulish";
       font-style: normal;
@@ -436,7 +438,7 @@
   opacity: 0.8;
   margin-top: 200px;
   display: flex;
-  padding: 100px 5%;
+  padding: 100px 7%;
   justify-content: space-between;
   flex-wrap: wrap;
   div {
@@ -498,6 +500,19 @@
     line-height: 50px;
   }
 }
+@media only screen and (max-width: 900px) {
+  .content-6 .review .describe {
+    font-size: 18px;
+  }
+  .content-6 .review .info{
+    .name {
+      font-size: 18px;
+    }
+    .position{
+      font-size: 18px;
+    }
+  }
+}
 @media only screen and (max-width: 1255px) {
   .header-one {
     .title {
@@ -533,7 +548,7 @@
   justify-content: flex-end !important;
 }
 .Content3-icon {
-  width: 40%;
+  width: 45%;
 }
 .content-3 .news {
   width: 50%;
@@ -558,6 +573,18 @@
   }
 }
 @media only screen and (max-width: 750px) {
+  .review {
+    margin-top: 50px !important;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .img {
+    padding-right: 0px !important;
+  }
+  .content-6 .review .avatar{
+    width: 60px;
+    height: 60px;
+  }
   .header .header-one .description-short {
     padding: 93px 8% 0 0;
   }
@@ -609,10 +636,6 @@
   }
   .content-6 .review .img {
     width: auto;
-  }
-  .review {
-    flex-wrap: wrap;
-    flex-direction: column;
   }
   .header-one .title {
     font-size: 18px;
