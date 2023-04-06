@@ -65,11 +65,18 @@ const Landing = () => {
 
   return (
     <React.Fragment>
-      <InView as="div" onChange={(inView, entry) => inView && setMenuActive(1)}>
-        <Header menuActive={menuActive} />
-      </InView>
+      <InView
+        as="div"
+        onChange={(inView, entry) => inView && setMenuActive(1)}
+      />
+      <Header menuActive={menuActive} />
+      <div style={{ height: "230px" }} id="common"></div>
       <div className="content">
-        <div className="content-1 top-mg">
+        <InView
+          as="div"
+          onChange={(inView, entry) => inView && setMenuActive(6)}
+        />
+        <div className="content-1">
           <img
             className="dot"
             style={{ top: "50%", left: "65%" }}
@@ -261,9 +268,13 @@ const Landing = () => {
           </div>
           <img className="Content3-icon content4-icon" alt="" src={Content4} />
         </div>
-        <div className="content-3 content-5">
+        <div className="content-3 content-5" style={{ position: "relative" }}>
           <img className="Content3-icon content5-icon" alt="" src={Content5} />
           <div className="network">
+            <InView
+              as="div"
+              onChange={(inView, entry) => inView && setMenuActive(4)}
+            />
             <h3>Mạng lưới đối tác lớn</h3>
             <div className="br"></div>
             <p className="descrip">
@@ -272,6 +283,7 @@ const Landing = () => {
               khách hàng.
             </p>
           </div>
+          <div id="client" style={{ position: "absolute", top: "50%" }}></div>
           {/* <Swiper
             style={{ width: "50%", height: 300, padding: "0 20px" }}
             spaceBetween={30}
@@ -323,10 +335,6 @@ const Landing = () => {
               </div>
             </SwiperSlide>
           </Swiper> */}
-          <InView
-            as="div"
-            onChange={(inView, entry) => inView && setMenuActive(4)}
-          />
         </div>
         <div className="content-6">
           <h3>Khách hàng nói về PLExpress</h3>
@@ -374,6 +382,10 @@ const Landing = () => {
                 </div>
               </div>
             </Slider>
+            <InView
+              as="div"
+              onChange={(inView, entry) => inView && setMenuActive(5)}
+            />
           </div>
         </div>
         <Footer />
