@@ -54,11 +54,16 @@ const settings: Settings = {
 const Landing = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuActive, setMenuActive] = useState(1);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     function handleResize() {
       setWidth(window.innerWidth);
     }
+
+    setTimeout(()=>{
+      setVisible(true)
+    }, 1000)
 
     window.addEventListener("resize", handleResize);
   }, []);
@@ -72,10 +77,6 @@ const Landing = () => {
       <Header menuActive={menuActive} />
       <div style={{ height: "230px" }} id="common"></div>
       <div className="content">
-        <InView
-          as="div"
-          onChange={(inView, entry) => inView && setMenuActive(6)}
-        />
         <div className="content-1">
           <img
             className="dot"
@@ -89,6 +90,10 @@ const Landing = () => {
             alt=""
             src={Dotblue}
           />
+        {visible && <InView
+            as="div"
+            onChange={(inView, entry) => inView && setMenuActive(6)}
+          />}  
           <p className="text-1">Giới thiệu chung</p>
           <div className="br-1"></div>
           <p className="text-2">
